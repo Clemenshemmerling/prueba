@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="text-center">Ejercicio 3</h1>
+  <div class="ctn" *ngIf="!showEP">
+    <div class="row mt-4" *ngFor="let p of post; let i = index">
+     <div class="col-sm-10 mt-4">
+       <span>{{p.body}}</span>
+       <!-- <textarea *ngIf="showEP" class="form-control" id="" cols="30" rows="10" [(ngModel)]="p.body" ></textarea> -->
+     </div>
+     <div class="col-sm-2 mb-4">
+       <button class="btn btn-danger" (click)="deletePost(p, i)" >Eliminar</button>
+       <button class="btn btn-warning mt-2" (click)="edPost(p, i)">Editar</button>
+     </div>
+    </div>
+  </div>
+<div class="row" *ngIf="showEP">
+  <div class="col-sm-12">
+    <textarea *ngIf="showEP" class="form-control" id="" cols="30" rows="10" [(ngModel)]="textEdit"></textarea>
+    <button class="btn btn-success" (click)="saveP()">Guardar</button>
+  </div>
+</div>
+</div>
